@@ -1,6 +1,6 @@
 from soda_machine import SodaMachine
 from customer import Customer
-from user_interface import User_Interface
+import user_interface
 
 
 class Simulation:
@@ -12,11 +12,9 @@ class Simulation:
         customer = Customer()
         customer.wallet.fill_wallet()
         soda_machine = SodaMachine()
-        soda_machine.fill_register()
-        soda_machine.fill_inventory()
         will_proceed = True
         while will_proceed:
-            user_option = User_Interface.simulation_main_menu()
+            user_option = user_interface.simulation_main_menu()
             if user_option == 1:
                 soda_machine.begin_transaction(customer)
             elif user_option == 2:
