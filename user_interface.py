@@ -1,4 +1,4 @@
-class os:
+class User_Interface:
 
     def simulation_main_menu():
         #"""Main menu prompting user to choose an option"""
@@ -53,7 +53,7 @@ def output_text(text):
 
 def clear_console():
     # """Used for clearing out the console. No errors."""
-    os.system('cls' if os.name == 'nt' else "clear")
+    User_Interface.system('cls' if User_Interface.name == 'nt' else "clear")
 
 
 def continue_prompt(text):
@@ -74,7 +74,7 @@ def soda_selection(inventory):
         print("Please choose from the following options:")
         i = 1
         for can in soda_options:
-            print("\n\tEnter -{i}- for {can} : ${can.price}")
+            print(f"\n\tEnter -{i}- for {can.name} : ${can.price}")
             i += 1
         user_selection = try_parse_int(input("Selection:"))
         validated_user_selection = validate_coin_choice(

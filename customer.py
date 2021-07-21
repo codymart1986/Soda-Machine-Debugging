@@ -10,7 +10,7 @@ class Customer:
 
     def gather_coins_from_wallet(self, selected_soda):
         #"""Method allowing user to choose coins from wallet for payment"""
-        will_proceed = False
+        will_proceed = True
         customer_payment = []
         user_interface.output_text(
             "Continue to add coins until you are ready to insert them into the machine")
