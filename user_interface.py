@@ -1,18 +1,17 @@
-import os
+class os:
 
-
-def simulation_main_menu():
-    # """Main menu prompting user to choose an option"""
-    validate_user_selection = (False, None)
-    while validate_user_selection[0] is False:
-        print("\t\t-Simulation menu-")
-        print("\tPress -0- to begin transaction")
-        print("\tPress -1- to check wallet for coins")
-        print("\tPress -2- to check backpack for cans")
-        print("\tPress -3- to terminate simulation")
-        user_input = try_parse_int(input())
-        validate_user_selection = validate_main_menu(user_input)
-    return validate_user_selection[1]
+    def simulation_main_menu():
+        #"""Main menu prompting user to choose an option"""
+        validate_user_selection = (False, None)
+        while validate_user_selection[0] is False:
+            print("\t\t-Simulation menu-")
+            print("\tPress -0- to begin transaction")
+            print("\tPress -1- to check wallet for coins")
+            print("\tPress -2- to check backpack for cans")
+            print("\tPress -3- to terminate simulation")
+            user_input = try_parse_int(input())
+            validate_user_selection = validate_main_menu(user_input)
+        return validate_user_selection[1]
 
 
 def validate_main_menu(user_input):
@@ -38,7 +37,8 @@ def display_customer_wallet_info(coins_list, total_value):
 def display_welcome():
     # """Initial method asking user if they'll make a purchase. No errors."""
     print("\nWelcome to the soda machine.  We only take coins as payment. \n")
-    user_response = continue_prompt("Would you like to make a purchase? (y/n):")
+    user_response = continue_prompt(
+        "Would you like to make a purchase? (y/n):")
     if user_response:
         return True
     else:
@@ -75,9 +75,10 @@ def soda_selection(inventory):
         i = 1
         for can in soda_options:
             print("\n\tEnter -{i}- for {can} : ${can.price}")
-            i++
+            i += 1
         user_selection = try_parse_int(input("Selection:"))
-        validated_user_selection = validate_coin_choice(user_selection, soda_options)
+        validated_user_selection = validate_coin_choice(
+            user_selection, soda_options)
     return validated_user_selection[1]
 
 
@@ -155,6 +156,6 @@ def validate_coin_selection(selection):
 
 def end_message(soda_name, change_amount):
     # """Closing message displaying name of soda purchased and amount of change returned"""
-    print(f'Enjoy your {soda}')
+    print(f'Enjoy your {soda_name}')
     if change_amount >= 0:
         print(f'Dispensing ${change_amount}')
