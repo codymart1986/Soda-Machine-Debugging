@@ -38,7 +38,8 @@ def display_customer_wallet_info(coins_list, total_value):
 def display_welcome():
     """Initial method asking user if they'll make a purchase. No errors."""
     print("\nWelcome to the soda machine.  We only take coins as payment. \n")
-    user_response = continue_prompt("Would you like to make a purchase? (y/n):")
+    user_response = continue_prompt(
+        "Would you like to make a purchase? (y/n):")
     if user_response:
         return True
     else:
@@ -77,7 +78,8 @@ def soda_selection(inventory):
             print("\n\tEnter -{i}- for {can} : ${can.price}")
             i++
         user_selection = try_parse_int(input("Selection:"))
-        validated_user_selection = validate_coin_choice(user_selection, soda_options)
+        validated_user_selection = validate_coin_choice(
+            user_selection, soda_options)
     return validated_user_selection[1]
 
 
