@@ -1,18 +1,17 @@
-import os
+class os:
 
-
-def simulation_main_menu():
-    """Main menu prompting user to choose an option"""
-    validate_user_selection = (False, None)
-    while validate_user_selection[0] is False:
-        print("\t\t-Simulation menu-")
-        print("\tPress -0- to begin transaction")
-        print("\tPress -1- to check wallet for coins")
-        print("\tPress -2- to check backpack for cans")
-        print("\tPress -3- to terminate simulation")
-        user_input = try_parse_int(input())
-        validate_user_selection = validate_main_menu(user_input)
-    return validate_user_selection[1]
+    def simulation_main_menu():
+        """Main menu prompting user to choose an option"""
+        validate_user_selection = (False, None)
+        while validate_user_selection[0] is False:
+            print("\t\t-Simulation menu-")
+            print("\tPress -0- to begin transaction")
+            print("\tPress -1- to check wallet for coins")
+            print("\tPress -2- to check backpack for cans")
+            print("\tPress -3- to terminate simulation")
+            user_input = try_parse_int(input())
+            validate_user_selection = validate_main_menu(user_input)
+        return validate_user_selection[1]
 
 
 def validate_main_menu(user_input):
@@ -76,7 +75,7 @@ def soda_selection(inventory):
         i = 1
         for can in soda_options:
             print("\n\tEnter -{i}- for {can} : ${can.price}")
-            i++
+            i += 1
         user_selection = try_parse_int(input("Selection:"))
         validated_user_selection = validate_coin_choice(
             user_selection, soda_options)
