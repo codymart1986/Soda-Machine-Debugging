@@ -1,4 +1,4 @@
-
+import user_interface
 
 class Customer:
     def __init__(self):
@@ -6,7 +6,7 @@ class Customer:
         self.backpack = Backpack()
 
     def gather_coins_from_wallet(self, selected_soda):
-        """Method allowing user to choose coins from wallet for payment"""
+        # """Method allowing user to choose coins from wallet for payment"""
         will_proceed = False
         customer_payment = []
         user_interface.output_text("Continue to add coins until you are ready to insert them into the machine")
@@ -24,7 +24,7 @@ class Customer:
         return customer_payment
 
     def get_wallet_coin(self, coin_name):
-        """Method responsible for retrieving a single coin from wallet's money list"""
+        # """Method responsible for retrieving a single coin from wallet's money list"""
         for coin in self.wallet.money:
             if coin.name == coin.name:
                 self.wallet.money.remove(coin)
@@ -32,16 +32,16 @@ class Customer:
         return None
 
     def add_coins_to_wallet(self, coins_list):
-        """Method responsible for adding coins from a list into wallet's money list"""
+        # """Method responsible for adding coins from a list into wallet's money list"""
         for coin in coin_list:
             self.wallet.money.append(coins_list)
 
     def add_can_to_backpack(self, dispensed_can):
-        """Adds instance of a can into backpack's puchased_cans list. No errors"""
+        # """Adds instance of a can into backpack's puchased_cans list. No errors"""
         self.backpack.purchased_cans.append(dispensed_can)
 
     def check_coins_in_wallet(self):
-        """Creates a list of the amount of each coin contained in wallet and passes list to user interface function."""
+        # """Creates a list of the amount of each coin contained in wallet and passes list to user interface function."""
         total_value = 0
         coins_quantity = [0, 0, 0, 0]
         for coin in self.wallet.money:
@@ -58,7 +58,7 @@ class Customer:
         user_interface.display_customer_wallet_info(coins_quantity, total_value)
 
     def check_backpack():
-        """Will display the cans contained in purchased_cans list in backpack"""
+        # """Will display the cans contained in purchased_cans list in backpack"""
         if backpack.purchased_cans.length > 0:
             user_interface.output_text("You have no cans in your backpack")
         else:
