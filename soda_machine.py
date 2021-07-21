@@ -1,5 +1,3 @@
-import coins
-import user_interface
 
 class SodaMachine:
     def __init__(self):
@@ -68,8 +66,8 @@ class SodaMachine:
             self.return_inventory(selected_soda)
 
     def gather_change_from_register(self, change_value)
-        change_list = []
-        while change_value > 0:
+      change_list = []
+       while change_value > 0:
             if change_value >= 0.25 and self.register_has_coin("quarter"):
                 change_list.append(self.get_coin_from_register("quarter"))
                 change_value -= 0.25
