@@ -1,5 +1,6 @@
-from soda_machine import SodaMachine
 from customer import Customer
+from soda_machine import SodaMachine
+
 import user_interface
 
 
@@ -10,7 +11,7 @@ class Simulation:
     def run_simulation(self):
         #"""The central method called in main.py."""
         customer = Customer()
-        customer.wallet.fill_wallet()
+
         soda_machine = SodaMachine()
         will_proceed = True
         while will_proceed:
