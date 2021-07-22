@@ -5,6 +5,7 @@ class Wallet:
     def __init__(self):
         self.money = []
         self.fill_wallet()
+        # removed
 
     def fill_wallet(self):
         #"""Method will fill wallet's money list with certain amount of each type of coin when called."""
